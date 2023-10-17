@@ -1,0 +1,90 @@
+
+@keyframes scaleAnimation {
+    0%, 100% {
+      transform: scale(1);
+    }
+  
+    50% {
+      transform: scale(0.8);
+    }
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #9e0000;
+    border: 10px solid #000;
+  }
+  
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: scaleAnimation 2s infinite;
+  }
+  
+  img {
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+  }
+  
+  th,
+  h1,
+  h2,
+  #Sobre,
+  p,
+  li {
+    font-family: "Rajdhani", sans-serif;
+    color: #ffff00;
+    text-decoration: underline;
+    text-decoration-color: #008000;
+    font-size: 37px;
+  }
+  
+  h1,
+  h2 {
+    font-family: "Dancing Script", cursive;
+    color: #00bfff;
+    border: 10px double white;
+    padding: 10px;
+  }
+  
+  #descricao,
+  #escolaridade,
+  #cursos,
+  #contato {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    margin-bottom: 10px;
+  }
+  
+  button[type="submit"] {
+    width: 100px;
+    height: 40px;
+    background-color: #00bfff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #008080;
+  }
+  
