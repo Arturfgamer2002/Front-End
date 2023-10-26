@@ -62,18 +62,22 @@ function optionClickEvent(e) {
 function finishQuiz() {
   // Criar variável de pontos baseado na divisão entre respostas corretas e quantidade de questões. Use a função Math.floor para arredondar.
   let score = Math.floor((correctAnswers / questions.length) * 100);
-
+ 
   // Implementar condicionais para inserir mensagem e cor do placar de acordo com a pontuação.
   let scoreText = '';
   let scoreColor = '';
-  if (score < 50) {
+  
+  if (score <= 50) {
     scoreText = 'Você pode fazer melhor!';
+    scoreText = `Você respondeu ${questions.length} questões e acertou ${correctAnswers}.`;
     scoreColor = 'red';
-  } else if (score < 75) {
+  } else if (score > 50 && score <= 75) {
     scoreText = 'Bom trabalho!';
+    scoreText = `Você respondeu ${questions.length} questões e acertou ${correctAnswers}.`;
     scoreColor = 'orange';
-  } else if (score < 100) {
+  } else if (score > 75 && score <= 100) {
     scoreText = 'Muito bem!';
+    scoreText = `Você respondeu ${questions.length} questões e acertou ${correctAnswers}.`;
     scoreColor = 'green';
   } else {
     scoreText = 'Parabéns! Perfeito!';

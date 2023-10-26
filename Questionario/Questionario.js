@@ -6,7 +6,8 @@ let questions = [
     answer: 0,
   },
   {
-    question: "Qual propriedade CSS é usada para definir a cor de fundo de um elemento?",
+    question: 
+      "Qual propriedade CSS é usada para definir a cor de fundo de um elemento?",
     options: ["color", "background-color", "bg-color", "fill-color"],
     answer: 1,
   },
@@ -23,7 +24,8 @@ let questions = [
     answer: 2,
   },
   {
-    question: "Qual propriedade CSS é usada para alterar a fonte do texto?",
+    question: 
+      "Qual propriedade CSS é usada para alterar a fonte do texto?",
     options: ["font-family", "text-font", "font-style", "text-type"],
     answer: 0,
   },
@@ -34,17 +36,20 @@ let questions = [
     answer: 1,
   },
   {
-    question: "Qual é a propriedade usada para ajustar o espaçamento entre linhas em CSS?",
+    question: 
+      "Qual é a propriedade usada para ajustar o espaçamento entre linhas em CSS?",
     options: ["line-height", "space-between", "line-spacing", "spacing"],
     answer: 0,
   },
   {
-    question: "Qual elemento HTML é usado para criar um botão em uma página da web?",
+    question: 
+      "Qual elemento HTML é usado para criar um botão em uma página da web?",
     options: ["&lt;button&gt;", "&lt;submit&gt;", "&lt;click&gt;", "&lt;input&gt;"],
     answer: 0,
   },
   {
-    question: "O que CSS representa?",
+    question: 
+      "O que CSS representa?",
     options: ["Colorful Style Sheets", "Creative Style Sheets", "Cascading Style Sheets", "Computer Style Sheets"],
     answer: 2,
   },

@@ -10,13 +10,8 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #f4f4f4; 
+    background-color: #D9D59A; 
     font-family: Arial, sans-serif;
-}
-
-h1 {
-    color: #333; 
-    margin: 20px 0;
 }
 
 .progress {
@@ -28,7 +23,7 @@ h1 {
 }
 
 .progress--bar {
-    background-color: #4caf50; 
+    background-color: #04B2D9; 
     height: 100%;
     transition: all ease 0.5s;
 }
@@ -44,7 +39,6 @@ h1 {
 }
 
 .question {
-    color: #333; 
     font-size: 18px;
     margin: 20px 0;
 }
@@ -53,10 +47,9 @@ h1 {
     display: flex;
     align-items: center;
     height: 40px;
-    background-color: #e0e0e0; 
+    background-color: #04D98B; 
     border-radius: 10px;
     margin-bottom: 5px;
-    color: #333; 
     font-size: 16px;
     cursor: pointer;
 }
@@ -70,7 +63,7 @@ h1 {
     border-radius: 15px;
     margin-left: 5px;
     margin-right: 10px;
-    background-color: #4caf50; 
+    background-color: #011C40; 
     color: #fff; 
 }
 
@@ -89,14 +82,13 @@ h1 {
 }
 
 .scoreText1 {
-    color: #333; 
     font-size: 23px;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
 .scorePct {
-    color: #4caf50; 
+    color: #04D98B; 
     font-size: 30px;
     font-weight: bold;
     margin-bottom: 10px;
@@ -104,7 +96,6 @@ h1 {
 
 .scoreText2 {
     font-size: 16px;
-    color: #333; 
     margin-bottom: 10px;
 }
 
@@ -120,6 +111,5 @@ h1 {
 
 footer {
     margin-top: 20px;
-    color: #555; 
     font-size: 13px;
 }
