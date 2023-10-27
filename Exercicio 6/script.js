@@ -6,12 +6,13 @@ let gameActive = true;
 let currentPlayer = "X";
 // Cria o array com as posições
 let gameState = ["", "", "", "", "", "", "", "", ""];
+
 // Define a mensagem de vencedor
 const winningMessage = () => `Jogador ${currentPlayer} venceu!`;
 // Cria uma mensagem para empate
 const drawMessage = () => `Jogo terminou empatado!`;
 // Cria a mensagem para a vez do jogador
-const currentPlayerTurn = () => `É a vez do ${currentPlayer}'`;
+const currentPlayerTurn = () => `É a vez do ${currentPlayer}`;
 
 // Insere em tela o atual jogador
 statusDisplay.innerHTML = currentPlayerTurn();
@@ -31,13 +32,17 @@ const winningConditions = [
 // Função para inserir a jogada da rodada
 function handleCellPlayed(clickedCell, clickedCellIndex) {
   // Definir o valor de gameState de índice clickedCellIndex com o valor de currentPlayer
+  gameState[clickedCellIndex] = currentPlayer;
   // No innerHtml de clikedCell com o valor de currentPlayer
+  clickedCell.innerHTML = currentPlayer;
 }
 
 // Função para trocar o jogador a cada rodada
 function handlePlayerChange() {
-  // Colocar um operador ternário definindo currentePlayer para ser o X ou O
+  // Colocar um operador ternário definindo currentPlayer para ser o X ou O
+  currentPlayer = currentPlayer === "X" ? "O" : "X";
   // Usar innerHTML para exibir a mensagem de status de acordo com a função currentPlayerTurn
+  statusDisplay.innerHTML = currentPlayerTurn();
 }
 
 // Função para verificar o resultado
@@ -80,31 +85,44 @@ function handleResultValidation() {
 // Função que verifica o clique
 function handleCellClick(e) {
   // Criar uma variável clickedCell para atribuir o target do evento
+  let clickedCell = e.target;
   // Criar uma variável index que recebe o parseInt do valor do atributo data-cell-index da variável clickedCell
+  let index = parseInt(clickedCell.getAttribute("data-cell-index"));
   // Criar uma condicional verificando se o gameState na posição index é diferente de "" ou gameActive for falso
-  // Dentro da condicional colocar return
+  if (gameState[index] !== "" || !gameActive) {
+    // Dentro da condicional colocar return
+    return;
+  }
   // Chamar a função handleCellPlayed com os argumentos clickedCell e index
+  handleCellPlayed(clickedCell, index);
   // Chamar a função handleResultValidation
+  handleResultValidation();
 }
 
 // Função para reiniciar o jogo
 function handleRestartGame() {
   //Definir o gameActive como true
+  gameActive = true;
   // Definir o currentPlayer como X
+  currentPlayer = "X";
   // Voltar o gameState para o estado inicial
+  gameState = ["", "", "", "", "", "", "", "", ""];
   // Definir o statusDisplay.innerHTML com o valor da função currentPlayerTurn
-  /* 
-  Usar querySelectorAll e .cell como atributo e colocar um laço forEach 
-  e como argumento utilizar innerHtml como ""
-  */
+  statusDisplay.innerHTML = currentPlayerTurn();
+
+  // Selecionar todas as células do jogo e limpar o conteúdo
+  const cells = document.querySelectorAll(".cell");
+  cells.forEach((cell) => {
+    cell.innerHTML = "";
+  });
 }
 
-/*
- Usar querySelectorAll e .cell como atributo e colocar um laço forEach 
- para adicionar o listener de click chamando a função handleCellClick
- */
+// Adicionar o listener de clique a todas as células do jogo
+const cells = document.querySelectorAll(".cell");
+cells.forEach((cell) => {
+  cell.addEventListener("click", handleCellClick);
+});
 
-/*
- Usar querySelector e .game--restart como atributo e adicionar o listener
- com click chamando a função handleRestartGame
- */
+// Adicionar o listener de clique ao botão de reiniciar o jogo
+const restartButton = document.querySelector(".game--restart");
+restartButton.addEventListener("click", handleRestartGame);
