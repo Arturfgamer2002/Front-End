@@ -1,0 +1,269 @@
+.mode-toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+}
+
+body.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body.dark-mode {
+    background-color: #800080;
+}
+
+body.dark-mode th,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode #Sobre,
+body.dark-mode p,
+body.dark-mode li {
+    color: #000;
+}
+
+body.dark-mode h1,
+body.dark-mode h2 {
+    color: #00bfff;
+}
+
+@keyframes scaleAnimation {
+
+    0%,
+    100% {
+        transform: scale(0.6);
+    }
+
+    50% {
+        transform: scale(0.7);
+    }
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #9e0000;
+    border: 10px solid #000;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: scaleAnimation 2s infinite;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+}
+
+#Sobre,
+p,
+li {
+    font-family: "Rajdhani", sans-serif;
+    color: #FFFF00;
+    text-decoration: underline;
+    text-decoration-color: #0000FF;
+    font-size: 37px;
+}
+
+h1,
+h2 {
+    font-family: "Dancing Script", cursive;
+    color: #00bfff;
+    border: 10px double #fff;
+    padding: 10px;
+}
+
+#descricao,
+#escolaridade,
+#cursos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button[type="submit"] {
+    width: 100px;
+    height: 40px;
+    background-color: #00bfff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.hidden {
+    display: none;
+}
+
+nav {
+    background-color: #333;
+    overflow: hidden;
+}
+
+nav ul {
+    padding: 0;
+    list-style-type: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+nav ul li a:hover {
+    color: #4CAF50;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+#centro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3em;
+    height: 100vh;
+    width: 100vw;
+    margin: auto;
+}
+
+#centro a {
+    color: #fff;
+    text-decoration: none;
+}
+
+ul.topbar li a.active {
+    font-weight: bold;
+}
+
+li>a::after {
+    content: "";
+    display: block;
+    margin: auto;
+    height: 5px;
+    width: 0;
+    top: 5px;
+    background: transparent;
+    transition: all 0.3s;
+}
+
+li>a:hover::after,
+li>a.active::after {
+    width: 100%;
+    background: #fff;
+}
+
+ul.topbar {
+    background: #333;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 3em;
+    line-height: 3em;
+    width: 100%;
+}
+
+ul.topbar li {
+    display: inline-block;
+    margin-left: 0.5em;
+    font-size: 0.9em;
+}
+
+ul.topbar li a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    height: 3em;
+    line-height: 3em;
+    padding: 0 0.3em 0 0.3em;
+    outline: 0;
+    font-weight: bold;
+}
+
+ul.topbar li.icon {
+    display: none;
+}
+
+@media screen and (max-width: 680px) {
+    ul.topbar li {
+        display: none;
+    }
+
+    ul.topbar li.icon {
+        display: block;
+        float: left;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    ul.topbar.responsive {
+        position: relative;
+        height: auto;
+        padding-top: 15px;
+        padding-bottom: 10px;
+        line-height: 5px;
+        width: 100%;
+    }
+
+    ul.topbar.responsive li.icon {
+        position: absolute;
+        margin-right: 10px;
+        right: 0;
+        top: 0;
+    }
+
+    ul.topbar.responsive li {
+        text-align: center;
+        float: none;
+        padding: 0;
+        display: inline;
+    }
+
+    ul.topbar.responsive li a {
+        display: block;
+        padding: 0;
+        text-align: center;
+    }
+
+    li>a::after {
+        height: 2px;
+    }
+
+    li>a:hover::after,
+    li>a.active::after {
+        width: 20%;
+        background: #fff;
+    }
+}
